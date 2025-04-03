@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Efford Elite Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #e6f0ff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    #logo {
+      display: block;
+      margin: 40px auto 10px auto;
+      width: 200px;
+    }
+
+    #output {
+      font-size: 200px;
+      font-weight: 600;
+      color: #004aad;
+      margin: 50px 0 30px;
+    }
+
+    button {
+      font-size: 22px;
+      font-weight: bold;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00337a;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Efford Elite Logo" id="logo">
+  <h1 id="output">Press Start</h1>
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+
+  <script>
+    let interval;
+    function start() {
+      if (!interval) {
+        interval = setInterval(() => {
+          document.getElementById("output").innerText = Math.floor(Math.random() * 100);
+        }, 1500);
+      }
+    }
+
+    function stop() {
+      clearInterval(interval);
+      interval = null;
+    }
+  </script>
+</body>
+</html>
